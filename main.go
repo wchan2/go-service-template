@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
@@ -15,5 +16,5 @@ func main() {
 	r := mux.NewRouter()
 	r.Handle("/", http.HandlerFunc(handler))
 
-	http.ListenAndServe(":8080", r)
+	logrus.Fatal(http.ListenAndServe(":8080", r))
 }
