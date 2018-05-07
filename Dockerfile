@@ -1,10 +1,9 @@
 FROM golang:1.10.2-alpine
 
 ENV GOPATH /gopath
-ENV PATH ${PATH}:${GOPATH}/bin
+COPY . /gopath/src/project
 
-COPY . /gopath/src/github.com/wchan2/go-service-template
-WORKDIR /gopath/src/github.com/wchan2/go-service-template
+WORKDIR /gopath/src/project
 
 RUN go build -o main
 
