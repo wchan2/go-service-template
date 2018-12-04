@@ -1,6 +1,10 @@
-version: '3.6'
+version: '3.7'
 services:
   webapp:
+    container_name: webapp
     build:
       context: .
+      target: development
     image: webapp:latest
+    volumes:
+      - .:/gopath/src/project
