@@ -7,6 +7,8 @@ WORKDIR /gopath/src/project
 RUN apk update && \
     apk upgrade && \
     apk add git && \
+    apk add gcc && \
+    apk add libc-dev && \
     go get -v -u github.com/golang/dep/cmd/dep && \
     go get -v -u github.com/cespare/reflex
 

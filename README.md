@@ -2,8 +2,9 @@
 
 A template for a Go web service. Its built with the following concepts:
 
-- Using multi-stage builds for small minimal images for deployment
 - docker-compose to manage external service dependencies such as databases for development
+- Using multi-stage builds for small minimal images for deployment
+- `Makefile` to run tests, static analysis and build and deploy docker images
 
 ## Dependencies
 
@@ -15,6 +16,15 @@ A template for a Go web service. Its built with the following concepts:
 ```
 go get -u github.com/golang/dep/cmd/dep
 dep ensure
+```
+
+## The Development Environment
+
+Setting up the local environment
+
+```
+docker-compose up   # start up the webapp with hot reloading
+docker-compose down # tear down the service
 ```
 
 ## Building the binary
@@ -34,3 +44,12 @@ Build a minimal image that runs the Go binary
 docker build --target deploy -t deployment . # builds a the minimal image with the binary
 docker run deployment                        # runs the service in the container
 ```
+
+## Batteries Included
+
+Includes the following batteries:
+
+1. A `Makefile` that includes simple build targets for
+    1. Running tests
+    1. Running static analysis
+    1. Building the image
