@@ -23,8 +23,9 @@ dep ensure
 Setting up the local environment
 
 ```
-docker-compose up   # start up the webapp with hot reloading
-docker-compose down # tear down the service
+export PROJECT_PATH=github.com/wchan2/go-service-temeplate # this should be where the project builds from
+docker-compose up                                          # start up the webapp with hot reloading
+docker-compose down                                        # tear down the service
 ```
 
 ## Building the binary

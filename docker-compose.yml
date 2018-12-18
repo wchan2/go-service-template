@@ -5,6 +5,8 @@ services:
     build:
       context: .
       target: development
+      args:
+        - PROJECT_PATH=${PROJECT_PATH}
     image: webapp:latest
     volumes:
       - .:/gopath/src/project
