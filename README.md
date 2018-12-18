@@ -54,3 +54,11 @@ Includes the following batteries:
     1. Running tests
     1. Running static analysis
     1. Building the image
+
+## Using the Template
+
+Download the template and *rename the import path in the go files to your project location relative to your gopath*.
+
+```bash
+wget https://github.com/wchan2/go-service-template/archive/master.zip && unzip master.zip && mv go-service-template-master/* . && rm -rf go-service-template-master master.zip
+```
